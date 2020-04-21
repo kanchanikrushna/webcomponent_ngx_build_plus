@@ -20,12 +20,12 @@ export class AppModule {
   /**
    *
    */
-  constructor(private intector: Injector) {
-
+  constructor(private injector: Injector) {
+    const headerApp = createCustomElement(AppComponent, {injector});
+    customElements.define('header-app', headerApp);
   }
   ngDoBootstrap(){
-      const headerApp = createCustomElement(AppComponent, {injector: this.intector});
-      customElements.define('header-app', headerApp);
+     
 
   }
 }
