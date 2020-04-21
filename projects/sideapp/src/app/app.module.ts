@@ -3,7 +3,7 @@ import { NgModule, Injector } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {createCustomElement} from '@angular/elements'
+import { createCustomElement } from '@angular/elements';
 
 @NgModule({
   declarations: [
@@ -22,8 +22,10 @@ export class AppModule {
    */
   constructor(private injector: Injector) {
     const headerApp = createCustomElement(AppComponent, {injector});
-    customElements.define('header-app', headerApp);
+    customElements.define('side-app', headerApp);
   }
-  ngDoBootStrap(){
+  ngDoBootstrap(){
+     
+
   }
 }

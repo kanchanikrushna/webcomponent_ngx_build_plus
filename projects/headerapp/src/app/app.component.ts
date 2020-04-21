@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +8,15 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 export class AppComponent {
   title = 'headerapp';
+  @Input()
+  headtext = 'header';
+
+  btnClick(){
+    const data ={
+      details: 'Header button click'
+    }
+
+    const event = new CustomEvent('header_btn_click', {detail: data});
+    window.dispatchEvent(event);
+  }
 }
